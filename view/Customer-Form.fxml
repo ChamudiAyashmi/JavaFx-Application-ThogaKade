@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="656.0" prefWidth="569.0" style="-fx-background-color: #00CED1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+   <children>
+      <Label alignment="CENTER" prefHeight="75.0" prefWidth="569.0" style="-fx-background-color: #008B8B;" text="Customer Form" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold Italic" size="35.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" layoutX="261.0" layoutY="98.0" onAction="#txtIdOnAction" prefHeight="31.0" prefWidth="178.0" promptText="Customer ID" style="-fx-background-radius: 5;" />
+      <TextField fx:id="txtName" layoutX="261.0" layoutY="141.0" prefHeight="31.0" prefWidth="178.0" promptText="Name" style="-fx-background-radius: 5;" />
+      <TextField fx:id="txtSalary" layoutX="261.0" layoutY="235.0" prefHeight="31.0" prefWidth="178.0" promptText="Salary" style="-fx-background-radius: 5;" />
+      <TextField fx:id="txtAddress" layoutX="261.0" layoutY="188.0" prefHeight="31.0" prefWidth="178.0" promptText="Address" style="-fx-background-radius: 5;" />
+      <Label layoutX="124.0" layoutY="101.0" prefHeight="18.0" prefWidth="96.0" text="Customer ID">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="124.0" layoutY="144.0" prefHeight="18.0" prefWidth="96.0" text="Name">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="124.0" layoutY="191.0" prefHeight="18.0" prefWidth="96.0" text="Address">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="124.0" layoutY="238.0" prefHeight="18.0" prefWidth="96.0" text="Salary">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="21.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="130.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="238.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="350.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tblCustomer" layoutX="30.0" layoutY="299.0" prefHeight="264.0" prefWidth="511.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="135.19995498657227" text="Customer ID" />
+          <TableColumn fx:id="colName" prefWidth="129.6000213623047" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="121.5999755859375" text="Address" />
+            <TableColumn fx:id="colSalary" prefWidth="123.19999999999999" text="Salary" />
+        </columns>
+      </TableView>
+      <Button layoutX="460.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnCancelOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Cancel" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="40.0" fitWidth="42.0" layoutX="97.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/icons8-customer-30.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="1.0" contrast="0.28" hue="-0.24" saturation="-0.32" />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>
