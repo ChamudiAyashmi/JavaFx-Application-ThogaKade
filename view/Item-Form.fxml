@@ -11,18 +11,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="656.0" prefWidth="627.0" style="-fx-background-color: #00CED1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemController">
+<AnchorPane prefHeight="656.0" prefWidth="672.0" style="-fx-background-color: #00CED1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemController">
    <children>
-      <Label alignment="CENTER" prefHeight="75.0" prefWidth="627.0" style="-fx-background-color: #008B8B;" text="Item Form" textFill="WHITE">
+      <Label alignment="CENTER" prefHeight="75.0" prefWidth="672.0" style="-fx-background-color: #008B8B;" text="Item Form" textFill="WHITE">
          <font>
             <Font name="Georgia Bold Italic" size="35.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCode" layoutX="252.0" layoutY="95.0" onAction="#txtCodeOnAction" prefHeight="31.0" prefWidth="178.0" promptText="Item Code" style="-fx-background-radius: 5;" />
-      <TextField fx:id="txtDescription" layoutX="252.0" layoutY="141.0" prefHeight="31.0" prefWidth="178.0" promptText="Description" style="-fx-background-radius: 5;" />
-      <TextField fx:id="txtQtyOnHand" layoutX="252.0" layoutY="234.0" prefHeight="31.0" prefWidth="178.0" promptText="Qty On Hand" style="-fx-background-radius: 5;" />
-      <TextField fx:id="txtUnitPrice" layoutX="252.0" layoutY="188.0" prefHeight="31.0" prefWidth="178.0" promptText="Unit Price" style="-fx-background-radius: 5;" />
-      <Label layoutX="108.0" layoutY="98.0" prefHeight="18.0" prefWidth="96.0" text="Item Code">
+      <TextField fx:id="txtCode" layoutX="282.0" layoutY="95.0" onAction="#txtCodeOnAction" prefHeight="31.0" prefWidth="178.0" promptText="Item Code" style="-fx-background-radius: 5;" />
+      <TextField fx:id="txtDescription" layoutX="282.0" layoutY="141.0" prefHeight="31.0" prefWidth="178.0" promptText="Description" style="-fx-background-radius: 5;" />
+      <TextField fx:id="txtQtyOnHand" layoutX="282.0" layoutY="233.0" prefHeight="31.0" prefWidth="178.0" promptText="Qty On Hand" style="-fx-background-radius: 5;" />
+      <TextField fx:id="txtUnitPrice" layoutX="282.0" layoutY="188.0" prefHeight="31.0" prefWidth="178.0" promptText="Unit Price" style="-fx-background-radius: 5;" />
+      <Label layoutX="121.0" layoutY="98.0" prefHeight="18.0" prefWidth="96.0" text="Item Code">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
@@ -42,40 +42,40 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <Button layoutX="31.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Add" textFill="WHITE">
+      <Button layoutX="40.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Add" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="144.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Search" textFill="WHITE">
+      <Button layoutX="162.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="266.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Update" textFill="WHITE">
+      <Button layoutX="288.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="382.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Delete" textFill="WHITE">
+      <Button layoutX="413.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <TableView fx:id="tblItem" layoutX="21.0" layoutY="299.0" prefHeight="264.0" prefWidth="585.0">
+      <TableView fx:id="tblItem" layoutX="23.0" layoutY="299.0" prefHeight="264.0" prefWidth="625.0">
         <columns>
-          <TableColumn fx:id="colCode" prefWidth="116.00000381469727" text="Item Code " />
-          <TableColumn fx:id="colDescription" prefWidth="208.0" text="Description" />
-            <TableColumn fx:id="colUnitPrice" prefWidth="149.5999755859375" text="Unit Price" />
-            <TableColumn fx:id="colQtyOnHand" prefWidth="110.4000183105469" text="Qty On Hand" />
+          <TableColumn fx:id="colCode" prefWidth="136.0" text="Item Code " />
+          <TableColumn fx:id="colDescription" prefWidth="190.4000244140625" text="Description" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="151.99993896484375" text="Unit Price" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="146.40008544921875" text="Qty On Hand" />
         </columns>
       </TableView>
-      <Button layoutX="497.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnCancelOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Cancel" textFill="WHITE">
+      <Button layoutX="531.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnCancelOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Cancel" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="136.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="184.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../asserts/icons8-pokebag-50.png" />
          </image>

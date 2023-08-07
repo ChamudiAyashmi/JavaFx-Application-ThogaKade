@@ -34,7 +34,14 @@ public class DashBoardController implements Initializable {
         this.root.getChildren().add(load);
     }
 
-    public void btnOrdersOnAction(ActionEvent actionEvent) {
+    public void btnOrdersOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = this.getClass().getResource("/view/Order-Form.fxml");
+
+        assert resource != null;
+
+        Parent load = (Parent) FXMLLoader.load(resource);
+        this.root.getChildren().clear();
+        this.root.getChildren().add(load);
     }
 
     public void btnExitOnAction(ActionEvent actionEvent) {

@@ -1,5 +1,6 @@
 package controller;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,10 +12,12 @@ import model.Customer;
 
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class CustomerController implements Initializable {
+    public static String[] getAllCustomersId;
     public TextField txtId;
     public TextField txtName;
     public TextField txtSalary;
@@ -24,6 +27,14 @@ public class CustomerController implements Initializable {
     public TableColumn colAddress;
     public TableColumn colSalary;
     public TableView tblCustomer;
+
+    public static Customer searchCustomerById(String custId) throws SQLException, ClassNotFoundException {
+        Connection connection=DBConnection.getInstance().getConnection();
+        Statement stm=connection.createStatement();
+        String SQL="Select * From Customer where id='"+custId+"'";
+        ResultSet rst=stm.executeQuery(SQL);
+        return rst.next() ? new Customer(custId,rst.getString("name"),rst.getString("address"),rst.getDouble("salary")):null;
+    }
 
     public void btnAddOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         try{
@@ -166,5 +177,27 @@ public class CustomerController implements Initializable {
 
     public void btnCancelOnAction(ActionEvent actionEvent) {
         clear();
+    }
+
+    public static ArrayList<String> getAllCustomersId() throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT id from Customer");
+        ResultSet rst = pstm.executeQuery();
+        ArrayList<String> idSet = new ArrayList<>();
+        while (rst.next()){
+            idSet.add(rst.getString(1));
+        }
+        return idSet;
+    }
+
+    public ArrayList<String> getAllItemId() throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT code from Item");
+        ResultSet rst = pstm.executeQuery();
+        ArrayList<String> codeSet = new ArrayList<>();
+        while (rst.next()){
+            codeSet.add(rst.getString(1));
+        }
+        return codeSet;
     }
 }
