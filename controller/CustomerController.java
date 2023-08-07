@@ -190,14 +190,5 @@ public class CustomerController implements Initializable {
         return idSet;
     }
 
-    public ArrayList<String> getAllItemId() throws SQLException, ClassNotFoundException {
-        Connection connection = DBConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement("SELECT code from Item");
-        ResultSet rst = pstm.executeQuery();
-        ArrayList<String> codeSet = new ArrayList<>();
-        while (rst.next()){
-            codeSet.add(rst.getString(1));
-        }
-        return codeSet;
-    }
+
 }

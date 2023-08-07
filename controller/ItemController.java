@@ -12,6 +12,7 @@ import model.Item;
 
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -157,5 +158,22 @@ public class ItemController implements Initializable {
 
     public void btnCancelOnAction(ActionEvent actionEvent) {
         clear();
+    }
+    public ArrayList<String> getAllItemId() throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement("SELECT code from Item");
+        ResultSet rst = pstm.executeQuery();
+        ArrayList<String> codeSet = new ArrayList<>();
+        while (rst.next()){
+            codeSet.add(rst.getString(1));
+        }
+        return codeSet;
+    }
+    public static Item searchItemByCode(String itemCode) throws SQLException, ClassNotFoundException {
+        Connection connection=DBConnection.getInstance().getConnection();
+        Statement stm=connection.createStatement();
+        String SQL="Select * From Item where code='"+itemCode+"'";
+        ResultSet rst=stm.executeQuery(SQL);
+        return rst.next() ? new Item(itemCode,rst.getString("description"),rst.getInt("qtyOnHand"),rst.getDouble("unitPrice")):null;
     }
 }
