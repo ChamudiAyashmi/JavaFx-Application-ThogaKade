@@ -82,6 +82,6 @@
             <Label layoutX="53.0" layoutY="611.0" prefHeight="18.0" prefWidth="214.0" text="\@ChamudiAyashmiFernando" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="root" layoutX="314.0" prefHeight="656.0" prefWidth="569.0" style="-fx-background-color: #00CED1;" />
+      <AnchorPane fx:id="root" layoutX="314.0" prefHeight="656.0" prefWidth="627.0" style="-fx-background-color: #00CED1;" />
    </children>
 </AnchorPane>

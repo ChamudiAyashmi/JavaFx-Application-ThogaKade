@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="656.0" prefWidth="569.0" style="-fx-background-color: #00CED1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
+<AnchorPane prefHeight="656.0" prefWidth="627.0" style="-fx-background-color: #00CED1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
    <children>
-      <Label alignment="CENTER" layoutY="-1.0" prefHeight="66.0" prefWidth="569.0" style="-fx-background-color: #008B8B;" text="DASHBOARD" textFill="WHITE">
+      <Label alignment="CENTER" layoutY="-1.0" prefHeight="66.0" prefWidth="627.0" style="-fx-background-color: #008B8B;" text="DASHBOARD" textFill="WHITE">
          <font>
             <Font name="Georgia Bold Italic" size="35.0" />
          </font>
@@ -23,22 +23,22 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblItemCount" alignment="CENTER" layoutX="221.0" layoutY="160.0" prefHeight="174.0" prefWidth="138.0" style="-fx-background-color: #008B8B;" text="00" textFill="WHITE">
+      <Label fx:id="lblItemCount" alignment="CENTER" layoutX="244.0" layoutY="160.0" prefHeight="174.0" prefWidth="138.0" style="-fx-background-color: #008B8B;" text="00" textFill="WHITE">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="231.0" layoutY="175.0" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #008B8B;" text="Items" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="254.0" layoutY="175.0" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #008B8B;" text="Items" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblOderCount" alignment="CENTER" layoutX="390.0" layoutY="160.0" prefHeight="174.0" prefWidth="138.0" style="-fx-background-color: #008B8B;" text="00" textFill="WHITE">
+      <Label fx:id="lblOderCount" alignment="CENTER" layoutX="431.0" layoutY="160.0" prefHeight="174.0" prefWidth="138.0" style="-fx-background-color: #008B8B;" text="00" textFill="WHITE">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="400.0" layoutY="175.0" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #008B8B;" text="Oders" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="441.0" layoutY="175.0" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #008B8B;" text="Oders" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -49,12 +49,12 @@
          </image>
       </ImageView>
       <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="63.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="439.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="480.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../asserts/icons8-shopping-cart-50.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="270.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="293.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../asserts/icons8-pokebag-50.png" />
          </image>
