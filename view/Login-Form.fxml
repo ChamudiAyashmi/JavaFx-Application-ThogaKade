@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="579.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="579.0" stroke="BLACK" strokeType="INSIDE" width="480.0">
+         <fill>
+            <LinearGradient endX="0.43181818181818177" endY="1.0" startX="1.0" startY="0.4696969552473589">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.1372319757938385" green="0.5789473652839661" blue="0.5200519561767578" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.03789473697543144" green="0.28421053290367126" blue="0.2513684332370758" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="59.0" layoutY="50.0" prefHeight="46.0" prefWidth="362.0" text="Welcome To Thoga Kade" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="191.0" layoutY="202.0" prefHeight="46.0" prefWidth="98.0" text="Sign In" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold" size="25.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="105.0" fitWidth="105.0" layoutX="187.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/icons8-customer-64.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtUserName" alignment="CENTER" layoutX="138.0" layoutY="278.0" prefHeight="38.0" prefWidth="202.0" promptText="User Name" />
+      <PasswordField fx:id="txtPassword" alignment="CENTER" layoutX="138.0" layoutY="337.0" onAction="#txtPasswordOnAction" prefHeight="38.0" prefWidth="202.0" promptText="Password" />
+      <Button fx:id="btnLogin" layoutX="175.0" layoutY="411.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="8.0" prefWidth="130.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" text="Log In" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icons8-login-50.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

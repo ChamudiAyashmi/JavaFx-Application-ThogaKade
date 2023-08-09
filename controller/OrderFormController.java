@@ -65,6 +65,7 @@ public class OrderFormController implements Initializable {
         if(isAdded){
            new Alert(Alert.AlertType.INFORMATION,"Added Success").show();
            clearItems();
+           loadOrderId();
         }
     }
     public void clearItems(){
@@ -73,6 +74,7 @@ public class OrderFormController implements Initializable {
         txtUnitPrice.setText("");
         txtQtyOnHand.setText("");
         txtQty.setText("");
+        tblOrderDetails.getSelectionModel().clearSelection();
     }
 
     private void loadDate(){
@@ -115,7 +117,6 @@ public class OrderFormController implements Initializable {
         ArrayList<String> itemId= new ItemController().getAllItemId();
         cmbItemCode.getItems().addAll(itemId);
     }
-
     public void cmbCustomerOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         String custId = cmbCustomerId.getSelectionModel().getSelectedItem().toString();
         txtCustomerName.setText(CustomerController.searchCustomerById(custId).getName());
