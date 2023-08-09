@@ -48,7 +48,7 @@ public class OrderFormController implements Initializable {
     public Button btnAdd;
     public Label lblOid;
 
-
+    public ObservableList<CartTm> cartList=FXCollections.observableArrayList();
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
        String orderId=txtOrderId.getText();
        String date=txtOrderDate.getText();
@@ -56,9 +56,12 @@ public class OrderFormController implements Initializable {
        ArrayList<OrderDetails> orderDetailList=new ArrayList<>();
 
         for (CartTm cartTm: cartList) {
-            String itemCode= (String) cmbItemCode.getSelectionModel().getSelectedItem();
+            /*String itemCode= (String) cmbItemCode.getSelectionModel().getSelectedItem();
             int qty= Integer.parseInt(txtQty.getText());
-            double unitPrice= Double.parseDouble(txtUnitPrice.getText());
+            double unitPrice= Double.parseDouble(txtUnitPrice.getText());*/
+            String itemCode=cartTm.getItemCode();
+            int qty=cartTm.getQty();
+            double unitPrice=cartTm.getUnitPrice();
             OrderDetails orderDetail =new OrderDetails(orderId,itemCode,qty,unitPrice);
             orderDetailList.add(orderDetail);
         }
@@ -137,7 +140,7 @@ public class OrderFormController implements Initializable {
         }
         return -1;
     }
-    public ObservableList<CartTm> cartList=FXCollections.observableArrayList();
+
     public void btnAddOnAction(ActionEvent actionEvent) {
         String itemCode = (String) cmbItemCode.getSelectionModel().getSelectedItem();
         String description = txtDescription.getText();
