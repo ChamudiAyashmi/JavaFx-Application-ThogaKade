@@ -9,10 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import model.CartTm;
-import model.Customer;
-import model.Item;
-import model.OrderDetails;
+import model.*;
 
 import javax.management.StringValueExp;
 import javax.swing.*;
@@ -52,19 +49,24 @@ public class OrderFormController implements Initializable {
     public Label lblOid;
 
 
-    public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
+    public void btnPlaceOrderOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
        String orderId=txtOrderId.getText();
        String date=txtOrderDate.getText();
        String customerId= (String) cmbCustomerId.getSelectionModel().getSelectedItem();
-       ArrayList<OrderDetails> orderDetails=new ArrayList<>();
+       ArrayList<OrderDetails> orderDetailList=new ArrayList<>();
 
         for (CartTm cartTm: cartList) {
             String itemCode= (String) cmbItemCode.getSelectionModel().getSelectedItem();
             int qty= Integer.parseInt(txtQty.getText());
             double unitPrice= Double.parseDouble(txtUnitPrice.getText());
             OrderDetails orderDetail =new OrderDetails(orderId,itemCode,qty,unitPrice);
-            orderDetails.add(orderDetail);
+            orderDetailList.add(orderDetail);
+        }
+        Order order=new Order(orderId,date,customerId,orderDetailList);
+        boolean isAdded=OrderController.placeOrder(order);
 
+        if(isAdded){
+           new Alert(Alert.AlertType.INFORMATION,"Added Success").show();
         }
 
     }
@@ -86,10 +88,6 @@ public class OrderFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    /*    tblOrderDetails.getSelectionModel().selectedIndexProperty().addListener(((observable, oldValue, newValue) -> {
-            System.out.println(newValue);
-
-        }));*/
         colCode.setCellValueFactory(new PropertyValueFactory<>("itemCode"));
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
@@ -157,11 +155,10 @@ public class OrderFormController implements Initializable {
                 CartTm tempCartTm = new CartTm(cartTm.getItemCode(),cartTm.getDescription(),cartTm.getQty()+qty,cartTm.getUnitPrice(),total+cartTm.getTotal());
                 cartList.remove(row);
                 cartList.add(tempCartTm);
-
             }
             tblOrderDetails.setItems(cartList);
             calculateTotal();
-            txtQty.setText("");
+
     }
     public void calculateTotal(){
         double total= 0;

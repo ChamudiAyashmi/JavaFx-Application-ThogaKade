@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Customer;
 import model.Item;
+import model.OrderDetails;
 
 import java.net.URL;
 import java.sql.*;
@@ -26,6 +27,23 @@ public class ItemController implements Initializable {
     public TableColumn colDescription;
     public TableColumn colQtyOnHand;
     public TableColumn colUnitPrice;
+
+    public static boolean updateStock(ArrayList<OrderDetails> orderDetailList) throws SQLException, ClassNotFoundException {
+        for (OrderDetails orderDetail:orderDetailList) {
+            if (!updateStock(orderDetail)){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static boolean updateStock(OrderDetails orderDetails) throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement("Update item set qtyOnHand=qtyOnHand-? where code=?");
+        pstm.setObject(1,orderDetails.getQty());
+        pstm.setObject(2,orderDetails.getItemCode());
+        return pstm.executeUpdate()>0;
+    }
+
     public void txtCodeOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         btnSearchOnAction(actionEvent);
 
