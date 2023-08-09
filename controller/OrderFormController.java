@@ -24,9 +24,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 import static controller.OrderController.getLastOrderId;
-
 public class OrderFormController implements Initializable {
-
     public TextField txtOrderId;
     public TextField txtOrderDate;
     public ComboBox cmbCustomerId;
@@ -47,7 +45,6 @@ public class OrderFormController implements Initializable {
     public Button btnRemove;
     public Button btnAdd;
     public Label lblOid;
-
     public ObservableList<CartTm> cartList=FXCollections.observableArrayList();
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
        String orderId=txtOrderId.getText();
@@ -56,9 +53,6 @@ public class OrderFormController implements Initializable {
        ArrayList<OrderDetails> orderDetailList=new ArrayList<>();
 
         for (CartTm cartTm: cartList) {
-            /*String itemCode= (String) cmbItemCode.getSelectionModel().getSelectedItem();
-            int qty= Integer.parseInt(txtQty.getText());
-            double unitPrice= Double.parseDouble(txtUnitPrice.getText());*/
             String itemCode=cartTm.getItemCode();
             int qty=cartTm.getQty();
             double unitPrice=cartTm.getUnitPrice();
@@ -70,8 +64,15 @@ public class OrderFormController implements Initializable {
 
         if(isAdded){
            new Alert(Alert.AlertType.INFORMATION,"Added Success").show();
+           clearItems();
         }
-
+    }
+    public void clearItems(){
+        txtCustomerName.setText("");
+        txtDescription.setText("");
+        txtUnitPrice.setText("");
+        txtQtyOnHand.setText("");
+        txtQty.setText("");
     }
 
     private void loadDate(){
@@ -87,8 +88,6 @@ public class OrderFormController implements Initializable {
             txtOrderId.setText("D001");
         }
     }
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         colCode.setCellValueFactory(new PropertyValueFactory<>("itemCode"));
@@ -119,12 +118,10 @@ public class OrderFormController implements Initializable {
 
     public void cmbCustomerOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         String custId = cmbCustomerId.getSelectionModel().getSelectedItem().toString();
-        System.out.println(custId);
         txtCustomerName.setText(CustomerController.searchCustomerById(custId).getName());
     }
     public void cmbItemOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         String itemCode = cmbItemCode.getSelectionModel().getSelectedItem().toString();
-        System.out.println(itemCode);
         Item item=ItemController.searchItemByCode(itemCode);
         txtDescription.setText(item.getDescription());
         txtQtyOnHand.setText(item.getQtyOnHand()+"");
@@ -134,22 +131,21 @@ public class OrderFormController implements Initializable {
         for (int i=0; i< cartList.size(); i++){
             String tempCode = String.valueOf(cartList.get(i).getItemCode());
             if(tempCode.equals(cartTm.getItemCode())){
-                System.out.println(i);
                 return i;
             }
         }
         return -1;
     }
-
     public void btnAddOnAction(ActionEvent actionEvent) {
-        String itemCode = (String) cmbItemCode.getSelectionModel().getSelectedItem();
-        String description = txtDescription.getText();
-        int qty = Integer.parseInt(txtQty.getText());
-        double unitPrice = Double.parseDouble(txtUnitPrice.getText());
-        double total = unitPrice*qty;
+        try{
+            String itemCode = (String) cmbItemCode.getSelectionModel().getSelectedItem();
+            String description = txtDescription.getText();
+            int qty = Integer.parseInt(txtQty.getText());
+            double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+            double total = unitPrice*qty;
 
-        CartTm cartTm = new CartTm(itemCode, description, qty, unitPrice, total);
-        int row = isAlreadyExists(cartTm);
+            CartTm cartTm = new CartTm(itemCode, description, qty, unitPrice, total);
+            int row = isAlreadyExists(cartTm);
             if (row==-1){
                 cartList.add(cartTm);
                 tblOrderDetails.setItems(cartList);
@@ -161,7 +157,9 @@ public class OrderFormController implements Initializable {
             }
             tblOrderDetails.setItems(cartList);
             calculateTotal();
-
+        }catch (NumberFormatException ex){
+            new Alert(Alert.AlertType.ERROR,"Added Failed !").show();
+        }
     }
     public void calculateTotal(){
         double total= 0;
@@ -171,7 +169,11 @@ public class OrderFormController implements Initializable {
         txtTotal.setText(String.valueOf(total));
     }
     public void btnRemoveOnAction(ActionEvent actionEvent) {
-        int row = tblOrderDetails.getSelectionModel().getSelectedIndex();
-        cartList.remove(row);
+        try{
+            int row = tblOrderDetails.getSelectionModel().getSelectedIndex();
+            cartList.remove(row);
+        }catch (ArrayIndexOutOfBoundsException ex){
+            new Alert(Alert.AlertType.ERROR,"Remove Failed").show();
+        }
     }
 }

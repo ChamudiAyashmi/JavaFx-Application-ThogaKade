@@ -14,24 +14,24 @@
 
 <AnchorPane prefHeight="656.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardController">
    <children>
-      <AnchorPane prefHeight="656.0" prefWidth="313.0" style="-fx-background-color: #008B8B;">
+      <AnchorPane layoutX="-1.0" prefHeight="656.0" prefWidth="313.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);">
          <children>
-            <Button layoutX="59.0" layoutY="309.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="42.0" prefWidth="196.0" style="-fx-background-color: #008B8B;" text="Customer" textFill="WHITE">
+            <Button layoutX="59.0" layoutY="309.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="42.0" prefWidth="196.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" text="Customer" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Button>
-            <Button layoutX="59.0" layoutY="372.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="42.0" prefWidth="196.0" style="-fx-background-color: #008B8B;" text="Item" textFill="WHITE">
+            <Button layoutX="59.0" layoutY="372.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="42.0" prefWidth="196.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" text="Item" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Button>
-            <Button layoutX="59.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnOrdersOnAction" prefHeight="42.0" prefWidth="196.0" style="-fx-background-color: #008B8B;" text="Orders" textFill="WHITE">
+            <Button layoutX="59.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnOrdersOnAction" prefHeight="42.0" prefWidth="196.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" text="Orders" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutY="156.0" prefHeight="76.0" prefWidth="314.0" style="-fx-background-color: #008B8B;" text="Thoga Kade" textFill="WHITE">
+            <Label alignment="CENTER" layoutY="156.0" prefHeight="76.0" prefWidth="314.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" text="Thoga Kade" textFill="WHITE">
                <font>
                   <Font name="Georgia Bold Italic" size="35.0" />
                </font>
@@ -62,19 +62,19 @@
                   <Image url="@../asserts/img.icons8.png" />
                </image>
             </ImageView>
-            <Button layoutX="59.0" layoutY="249.0" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="42.0" prefWidth="196.0" style="-fx-background-color: #008B8B;" text="Home" textFill="WHITE">
+            <Button layoutX="59.0" layoutY="249.0" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="42.0" prefWidth="196.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" text="Home" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Button>
-            <Button layoutX="38.0" layoutY="513.0" mnemonicParsing="false" onAction="#btnExitOnAction" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: #008B8B;">
+            <Button layoutX="38.0" layoutY="513.0" mnemonicParsing="false" onAction="#btnExitOnAction" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);">
                <graphic>
-                  <ImageView fx:id="btnExitOnAction" fitHeight="76.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="btnExitOnAction" fitHeight="52.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../asserts/icons8-logout-96.png" />
                      </image>
                      <effect>
-                        <ColorAdjust brightness="1.0" contrast="-0.24" hue="0.3" saturation="-0.45" />
+                        <ColorAdjust brightness="1.0" contrast="-0.2" hue="0.11" saturation="-0.45" />
                      </effect>
                   </ImageView>
                </graphic>
@@ -82,6 +82,6 @@
             <Label layoutX="53.0" layoutY="611.0" prefHeight="18.0" prefWidth="214.0" text="\@ChamudiAyashmiFernando" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="root" layoutX="314.0" prefHeight="656.0" prefWidth="672.0" style="-fx-background-color: #00CED1;" />
+      <AnchorPane fx:id="root" layoutX="313.0" prefHeight="656.0" prefWidth="672.0" style="-fx-background-color: #00CED1;" />
    </children>
 </AnchorPane>

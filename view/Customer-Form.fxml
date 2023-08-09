@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="656.0" prefWidth="672.0" style="-fx-background-color: #00CED1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+<AnchorPane prefHeight="656.0" prefWidth="672.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
    <children>
-      <Label alignment="CENTER" prefHeight="75.0" prefWidth="672.0" style="-fx-background-color: #008B8B;" text="Customer Form" textFill="WHITE">
+      <Label alignment="CENTER" prefHeight="75.0" prefWidth="672.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" text="Customer Form" textFill="WHITE">
          <font>
             <Font name="Georgia Bold Italic" size="35.0" />
          </font>
@@ -22,42 +22,42 @@
       <TextField fx:id="txtName" layoutX="271.0" layoutY="141.0" prefHeight="31.0" prefWidth="178.0" promptText="Name" style="-fx-background-radius: 5;" />
       <TextField fx:id="txtSalary" layoutX="271.0" layoutY="235.0" prefHeight="31.0" prefWidth="178.0" promptText="Salary" style="-fx-background-radius: 5;" />
       <TextField fx:id="txtAddress" layoutX="271.0" layoutY="188.0" prefHeight="31.0" prefWidth="178.0" promptText="Address" style="-fx-background-radius: 5;" />
-      <Label layoutX="124.0" layoutY="101.0" prefHeight="18.0" prefWidth="96.0" text="Customer ID">
+      <Label layoutX="124.0" layoutY="101.0" prefHeight="18.0" prefWidth="96.0" text="Customer ID" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="124.0" layoutY="144.0" prefHeight="18.0" prefWidth="96.0" text="Name">
+      <Label layoutX="124.0" layoutY="144.0" prefHeight="18.0" prefWidth="96.0" text="Name" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="124.0" layoutY="191.0" prefHeight="18.0" prefWidth="96.0" text="Address">
+      <Label layoutX="124.0" layoutY="191.0" prefHeight="18.0" prefWidth="96.0" text="Address" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="124.0" layoutY="238.0" prefHeight="18.0" prefWidth="96.0" text="Salary">
+      <Label layoutX="124.0" layoutY="238.0" prefHeight="18.0" prefWidth="96.0" text="Salary" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <Button layoutX="28.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Add" textFill="WHITE">
+      <Button layoutX="28.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Add" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="156.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Search" textFill="WHITE">
+      <Button layoutX="156.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="287.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Update" textFill="WHITE">
+      <Button layoutX="287.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="416.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Delete" textFill="WHITE">
+      <Button layoutX="416.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -70,7 +70,7 @@
             <TableColumn fx:id="colSalary" prefWidth="159.199951171875" text="Salary" />
         </columns>
       </TableView>
-      <Button layoutX="542.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnCancelOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #008B8B; -fx-background-radius: 10;" text="Cancel" textFill="WHITE">
+      <Button layoutX="542.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnCancelOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Cancel" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
