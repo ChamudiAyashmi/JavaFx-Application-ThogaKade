@@ -172,7 +172,13 @@ public class OrderFormController implements Initializable {
     public void btnRemoveOnAction(ActionEvent actionEvent) {
         try{
             int row = tblOrderDetails.getSelectionModel().getSelectedIndex();
+
             cartList.remove(row);
+            txtDescription.setText("");
+            txtUnitPrice.setText("");
+            txtQtyOnHand.setText("");
+            txtQty.setText("");
+            calculateTotal();
         }catch (ArrayIndexOutOfBoundsException ex){
             new Alert(Alert.AlertType.ERROR,"Remove Failed").show();
         }
