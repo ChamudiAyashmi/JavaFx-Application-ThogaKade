@@ -1,30 +1,22 @@
 package controller;
 
-import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 import model.*;
 
-import javax.management.StringValueExp;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.net.URL;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 
 import static controller.OrderController.getLastOrderId;
-public class OrderFormController implements Initializable {
+public class PlaceOrderFormController implements Initializable {
     public TextField txtOrderId;
     public TextField txtOrderDate;
     public ComboBox cmbCustomerId;
@@ -172,8 +164,8 @@ public class OrderFormController implements Initializable {
     public void btnRemoveOnAction(ActionEvent actionEvent) {
         try{
             int row = tblOrderDetails.getSelectionModel().getSelectedIndex();
-
             cartList.remove(row);
+
             txtDescription.setText("");
             txtUnitPrice.setText("");
             txtQtyOnHand.setText("");

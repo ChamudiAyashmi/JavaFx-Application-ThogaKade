@@ -41,16 +41,6 @@ public class DashBoardController implements Initializable {
         this.root.getChildren().add(load);
     }
 
-    public void btnOrdersOnAction(ActionEvent actionEvent) throws IOException {
-        URL resource = this.getClass().getResource("/view/Order-Form.fxml");
-
-        assert resource != null;
-
-        Parent load = (Parent) FXMLLoader.load(resource);
-        this.root.getChildren().clear();
-        this.root.getChildren().add(load);
-    }
-
     public void btnExitOnAction(ActionEvent actionEvent) throws IOException {
         parent=FXMLLoader.load(getClass().getResource("/view/Login-Form.fxml"));
         stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
@@ -81,6 +71,26 @@ public class DashBoardController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        this.root.getChildren().clear();
+        this.root.getChildren().add(load);
+    }
+
+    public void btnOrderOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = this.getClass().getResource("/view/order-Form.fxml");
+
+        assert resource != null;
+
+        Parent load = (Parent) FXMLLoader.load(resource);
+        this.root.getChildren().clear();
+        this.root.getChildren().add(load);
+
+    }
+    public void btnpPlaceOrderOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = this.getClass().getResource("/view/placeOrder-Form.fxml");
+
+        assert resource != null;
+
+        Parent load = (Parent) FXMLLoader.load(resource);
         this.root.getChildren().clear();
         this.root.getChildren().add(load);
     }

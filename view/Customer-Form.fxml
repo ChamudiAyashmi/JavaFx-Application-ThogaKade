@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="656.0" prefWidth="672.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+<AnchorPane prefHeight="693.0" prefWidth="672.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
    <children>
       <Label alignment="CENTER" prefHeight="75.0" prefWidth="672.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" text="Customer Form" textFill="WHITE">
          <font>
@@ -42,27 +42,27 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <Button layoutX="28.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Add" textFill="WHITE">
+      <Button layoutX="28.0" layoutY="606.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Add" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="156.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Search" textFill="WHITE">
+      <Button layoutX="156.0" layoutY="606.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="287.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Update" textFill="WHITE">
+      <Button layoutX="287.0" layoutY="606.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="416.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Delete" textFill="WHITE">
+      <Button layoutX="417.0" layoutY="606.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <TableView fx:id="tblCustomer" layoutX="21.0" layoutY="299.0" prefHeight="264.0" prefWidth="628.0">
+      <TableView fx:id="tblCustomer" layoutX="21.0" layoutY="305.0" prefHeight="264.0" prefWidth="628.0">
         <columns>
           <TableColumn fx:id="colId" prefWidth="148.79999351501465" text="Customer ID" />
           <TableColumn fx:id="colName" prefWidth="158.4000244140625" text="Name" />
@@ -70,7 +70,7 @@
             <TableColumn fx:id="colSalary" prefWidth="159.199951171875" text="Salary" />
         </columns>
       </TableView>
-      <Button layoutX="542.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnCancelOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Cancel" textFill="WHITE">
+      <Button layoutX="542.0" layoutY="606.0" mnemonicParsing="false" onAction="#btnCancelOnAction" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%); -fx-background-radius: 10;" text="Cancel" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
