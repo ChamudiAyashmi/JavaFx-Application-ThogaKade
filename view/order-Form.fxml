@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="693.0" prefWidth="672.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderFormController">
+   <children>
+      <Label alignment="CENTER" layoutY="-1.0" prefHeight="73.0" prefWidth="672.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" text="Orders" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold Italic" size="35.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblOrders" layoutX="56.0" layoutY="122.0" prefHeight="506.0" prefWidth="560.0">
+        <columns>
+          <TableColumn fx:id="colOrderId" prefWidth="187.199951171875" text="Order ID" />
+          <TableColumn fx:id="colDate" prefWidth="189.5999755859375" text="Date" />
+            <TableColumn fx:id="colCustomerID" prefWidth="183.2000732421875" text="Customer ID" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="50.0" fitWidth="51.0" layoutX="209.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/icons8-delivery-box-64.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>

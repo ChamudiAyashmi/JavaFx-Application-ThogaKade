@@ -35,7 +35,6 @@ public class CustomerController implements Initializable {
         ResultSet rst=stm.executeQuery(SQL);
         return rst.next() ? new Customer(custId,rst.getString("name"),rst.getString("address"),rst.getDouble("salary")):null;
     }
-
     public void btnAddOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         try{
             Customer customer = new Customer(
@@ -89,7 +88,6 @@ public class CustomerController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Customer not found !").show();
         }
     }
-
     public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         String SQL="Update Customer set name=?,address=?,salary=? where id=?";
         Connection connection = DBConnection.getInstance().getConnection();
@@ -189,6 +187,4 @@ public class CustomerController implements Initializable {
         }
         return idSet;
     }
-
-
 }
