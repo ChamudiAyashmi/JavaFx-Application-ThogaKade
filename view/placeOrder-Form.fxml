@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="672.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderFormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="694.0" prefWidth="672.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderFormController">
    <children>
       <Label alignment="CENTER" prefHeight="75.0" prefWidth="672.0" style="-fx-background-color: linear-gradient(from 100.0% 46.9697% to 43.1818% 100.0%, #239485 0.0%, #0a4840 100.0%);" text="Place Order" textFill="WHITE">
          <font>
@@ -37,7 +37,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtOrderId" editable="false" layoutX="158.0" layoutY="102.0" prefHeight="31.0" prefWidth="110.0" style="-fx-background-radius: 5;">
+      <TextField fx:id="txtOrderId" editable="false" layoutX="158.0" layoutY="102.0" prefHeight="31.0" prefWidth="126.0" style="-fx-background-radius: 5;">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -58,7 +58,7 @@
          </font>
       </Label>
       <ComboBox fx:id="cmbCustomerId" layoutX="158.0" layoutY="151.0" onAction="#cmbCustomerOnAction" prefHeight="26.0" prefWidth="126.0" />
-      <TextField fx:id="txtCustomerName" editable="false" layoutX="493.0" layoutY="148.0" prefHeight="31.0" prefWidth="118.0" style="-fx-background-radius: 5;">
+      <TextField fx:id="txtCustomerName" editable="false" layoutX="493.0" layoutY="148.0" prefHeight="31.0" prefWidth="138.0" style="-fx-background-radius: 5;">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -84,7 +84,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDescription" editable="false" layoutX="172.0" layoutY="236.0" prefHeight="31.0" prefWidth="138.0" style="-fx-background-radius: 5;">
+      <TextField fx:id="txtDescription" editable="false" layoutX="163.0" layoutY="236.0" prefHeight="31.0" prefWidth="147.0" style="-fx-background-radius: 5;">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

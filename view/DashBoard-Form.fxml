@@ -87,6 +87,6 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="root" layoutX="313.0" prefHeight="693.0" prefWidth="672.0" style="-fx-background-color: #00CED1;" />
+      <AnchorPane fx:id="root" layoutX="313.0" prefHeight="694.0" prefWidth="672.0" style="-fx-background-color: #00CED1;" />
    </children>
 </AnchorPane>

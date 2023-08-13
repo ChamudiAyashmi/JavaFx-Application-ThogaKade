@@ -10,6 +10,7 @@ import model.*;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -39,26 +40,35 @@ public class PlaceOrderFormController implements Initializable {
     public Label lblOid;
     public ObservableList<CartTm> cartList=FXCollections.observableArrayList();
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-       String orderId=txtOrderId.getText();
-       String date=txtOrderDate.getText();
-       String customerId= (String) cmbCustomerId.getSelectionModel().getSelectedItem();
-       ArrayList<OrderDetails> orderDetailList=new ArrayList<>();
+        try {
+            String orderId=txtOrderId.getText();
+            String date=txtOrderDate.getText();
+            String customerId= (String) cmbCustomerId.getSelectionModel().getSelectedItem();
+            ArrayList<OrderDetails> orderDetailList=new ArrayList<>();
 
-        for (CartTm cartTm: cartList) {
-            String itemCode=cartTm.getItemCode();
-            int qty=cartTm.getQty();
-            double unitPrice=cartTm.getUnitPrice();
-            OrderDetails orderDetail =new OrderDetails(orderId,itemCode,qty,unitPrice);
-            orderDetailList.add(orderDetail);
-        }
-        Order order=new Order(orderId,date,customerId,orderDetailList);
-        boolean isAdded=OrderController.placeOrder(order);
+            for (CartTm cartTm: cartList) {
+                String itemCode=cartTm.getItemCode();
+                int qty=cartTm.getQty();
+                double unitPrice=cartTm.getUnitPrice();
+                OrderDetails orderDetail =new OrderDetails(orderId,itemCode,qty,unitPrice);
+                orderDetailList.add(orderDetail);
+            }
+            Order order=new Order(orderId,date,customerId,orderDetailList);
+            boolean isAdded=OrderController.placeOrder(order);
 
-        if(isAdded){
-           new Alert(Alert.AlertType.INFORMATION,"Added Success").show();
-           clearItems();
-           loadOrderId();
+            if(isAdded){
+                new Alert(Alert.AlertType.INFORMATION,"Added Success !").show();
+                clearItems();
+                loadOrderId();
+                removeAllTableData();
+
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Added Failed !");
+            }
+        }catch (SQLIntegrityConstraintViolationException ex){
+            new Alert(Alert.AlertType.ERROR,"Added Failed !").show();
         }
+
     }
     public void clearItems(){
         txtCustomerName.setText("");
@@ -66,6 +76,7 @@ public class PlaceOrderFormController implements Initializable {
         txtUnitPrice.setText("");
         txtQtyOnHand.setText("");
         txtQty.setText("");
+        txtTotal.setText("");
         tblOrderDetails.getSelectionModel().clearSelection();
     }
 
@@ -161,6 +172,15 @@ public class PlaceOrderFormController implements Initializable {
         }
         txtTotal.setText(String.valueOf(total));
     }
+    private void removeAllTableData(){
+        for (int i = 0; i < tblOrderDetails.getItems().size(); i++) {
+            tblOrderDetails.getItems().clear();
+        }
+    }
+    private void clearComboBox(){
+        cmbItemCode.getSelectionModel().clearSelection();
+        cmbCustomerId.getSelectionModel().clearSelection();
+    }
     public void btnRemoveOnAction(ActionEvent actionEvent) {
         try{
             int row = tblOrderDetails.getSelectionModel().getSelectedIndex();
@@ -175,4 +195,5 @@ public class PlaceOrderFormController implements Initializable {
             new Alert(Alert.AlertType.ERROR,"Remove Failed").show();
         }
     }
+
 }
